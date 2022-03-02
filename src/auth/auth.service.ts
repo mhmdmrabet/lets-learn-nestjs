@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { AuthDto } from './dto';
 
 @Injectable({})
 export class AuthService {
@@ -8,7 +9,7 @@ export class AuthService {
     return { message: 'Selem, Imran ! You have sign in' };
   }
 
-  signup() {
-    return { message: 'Selem, Imran ! You have signed up' };
+  signup(dto: AuthDto) {
+    return { message: 'Selem, Imran ! You have signed up', data: dto };
   }
 }
